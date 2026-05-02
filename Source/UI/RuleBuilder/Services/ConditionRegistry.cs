@@ -352,7 +352,9 @@ namespace Better_Work_Tab.UI.RuleBuilder.Services
                     Type = ConditionType.Passion,
                     Category = "BWT_Category_Skill",
                     MinValue = 0,
-                    MaxValue = 2,
+                    MaxValue = Better_Work_Tab.ModSupport.VSESupport.IsActive
+                        ? Better_Work_Tab.ModSupport.VSESupport.PassionLabels.Length - 1
+                        : 2,
                     DefaultValue = 1,
                     ShortLabel = "Passion"
                 },

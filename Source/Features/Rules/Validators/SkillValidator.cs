@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Better_Work_Tab.Features.Rules;
+using Better_Work_Tab.ModSupport;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -30,13 +31,14 @@ namespace Better_Work_Tab.Features.Rules.Validators
 
             var skills = pawn.skills;
 
-            // Passion filter
+            // Passion filter — "at least X" threshold semantics
             if (p.PassionLevel > -1)
             {
-                if (skills == null)
-                    return false;
-
-                if (skills.MaxPassionOfRelevantSkillsFor(wt) != (Passion)p.PassionLevel)
+                var passion = skills.MaxPassionOfRelevantSkillsFor(wt);
+                int rank = VSESupport.IsActive
+                    ? VSESupport.GetRank(passion)
+                    : (int)passion;
+                if (rank < p.PassionLevel)
                     return false;
             }
 

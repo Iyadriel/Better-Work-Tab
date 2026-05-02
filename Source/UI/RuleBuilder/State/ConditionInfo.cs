@@ -79,13 +79,25 @@ namespace Better_Work_Tab.UI.RuleBuilder.State
 
                 case ConditionType.Passion:
                     int passionLevel = (int)Value;
-                    return passionLevel switch
+                    string passionLabel;
+                    if (Better_Work_Tab.ModSupport.VSESupport.IsActive)
                     {
-                        0 => "BWT_None".Translate(),
-                        1 => "BWT_Minor".Translate(),
-                        2 => "BWT_Major".Translate(),
-                        _ => passionLevel.ToString()
-                    };
+                        var vseLabels = Better_Work_Tab.ModSupport.VSESupport.PassionLabels;
+                        passionLabel = passionLevel >= 0 && passionLevel < vseLabels.Length
+                            ? vseLabels[passionLevel]
+                            : passionLevel.ToString();
+                    }
+                    else
+                    {
+                        passionLabel = passionLevel switch
+                        {
+                            0 => "BWT_None".Translate(),
+                            1 => "BWT_Minor".Translate(),
+                            2 => "BWT_Major".Translate(),
+                            _ => passionLevel.ToString()
+                        };
+                    }
+                    return $"≥ {passionLabel}";
 
                 case ConditionType.Gender:
                     var gender = (Gender?)Value;

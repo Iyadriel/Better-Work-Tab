@@ -188,10 +188,13 @@ namespace Better_Work_Tab.UI.RuleBuilder.Widgets
         {
             int currentValue = (int)ConditionRegistry.GetValue(condition.Key, parameters);
 
-            string[] labels = { "BWT_None".Translate(), "BWT_Minor".Translate(), "BWT_Major".Translate() };
-            float buttonWidth = (rect.width - 8f) / 3f;
+            string[] labels = Better_Work_Tab.ModSupport.VSESupport.IsActive
+                ? Better_Work_Tab.ModSupport.VSESupport.PassionLabels.Select<string, string>(l => l.Translate()).ToArray()
+                : ["BWT_None".Translate(), "BWT_Minor".Translate(), "BWT_Major".Translate()];
+            int count = labels.Length;
+            float buttonWidth = (rect.width - 8f) / count;
 
-            for (int i = 0; i <= 2; i++)
+            for (int i = 0; i < count; i++)
             {
                 Rect buttonRect = new Rect(
                     rect.x + i * (buttonWidth + 2f),
