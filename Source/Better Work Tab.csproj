@@ -13,9 +13,12 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>latest</LangVersion>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <Product>Better Work Tab</Product>
+    <Authors>Coolnether123, Iyadriel</Authors>
+    <Company>Coolnether123</Company>
+    <Version>1.0.0</Version>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,148 +40,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
     <OutputPath>..\1.6\Assemblies\</OutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="BetterWorkTab.cs" />
-    <Compile Include="BetterWorkTabLocalState.cs" />
-    <Compile Include="DragDrop\DragHandler.cs" />
-    <Compile Include="DragDrop\DragSession.cs" />
-    <Compile Include="DragDrop\ColumnDragHandler.cs" />
-    <Compile Include="DragDrop\ColumnSelectionManager.cs" />
-    <Compile Include="Features\HighlightDrawer.cs" />
-    <Compile Include="Features\HighlightState.cs" />
-    <Compile Include="Features\Caching\BedCountCache.cs" />
-    <Compile Include="Features\Patches\Patch_PawnTable_RecacheIfDirty.cs" />
-    <Compile Include="Features\Patches\Patch_Pawn_WorkSettings_SetPriority.cs" />
-    <Compile Include="Features\Patches\Patch_WorkPriority_DoCell_Unified.cs" />
-    <Compile Include="Features\Rules\AssignmentValidationResult.cs" />
-    <Compile Include="Features\Rules\Validators\AssignmentConstraintsValidator.cs" />
-    <Compile Include="Features\Rules\Validators\BiologicalValidator.cs" />
-    <Compile Include="Features\Rules\Validators\EligibilityValidator.cs" />
-    <Compile Include="Features\Rules\Validators\PriorityValidator.cs" />
-    <Compile Include="Features\Rules\Validators\SkillValidator.cs" />
-    <Compile Include="Features\Rules\Validators\SocialValidator.cs" />
-    <Compile Include="Features\Rules\WorkAssignmentRuleset.cs" />
-    <Compile Include="Features\Rules\WorkAssignmentRule.cs" />
-    <Compile Include="Features\Rules\WorkAssignmentParameters.cs" />
-    <Compile Include="Features\Rules\RuleParameterRegistry.cs" />
-    <Compile Include="Features\ColumnBaselineManager.cs" />
-    <Compile Include="Features\WorkExecutionOrder.cs" />
-    <Compile Include="Features\Workloads\GameComponent_BWTWorldSettings.cs" />
-    <Compile Include="Features\Workloads\Worklist.cs" />
-    <Compile Include="Features\Workloads\WorkloadNamers.cs" />
-    <Compile Include="Features\Workloads\PawnWorkload.cs" />
-    <Compile Include="Features\Patches\FloatMenuPatches.cs" />
-    <Compile Include="Features\Patches\WorkTabSortPatches.cs" />
-    <Compile Include="Features\Patches\CustomWorkBoxDrawer.cs" />
-    <Compile Include="Features\Patches\ShiftHelper.cs" />
-    <Compile Include="DragDrop\RowDragHandler.cs" />
-    <Compile Include="Features\ColumnWidthPersistence.cs" />
-    <Compile Include="PawnOrganizer\API\IPawnOrganizerSnapshot.cs" />
-    <Compile Include="PawnOrganizer\API\WorkTabSnapshot.cs" />
-    <Compile Include="PawnOrganizer\API\IWorkTabLayoutController.cs" />
-    <Compile Include="PawnOrganizer\API\PawnColorDatabase.cs" />
-    <Compile Include="PawnOrganizer\API\PawnTextColorDatabase.cs" />
-    <Compile Include="PawnOrganizer\ObjectPools.cs" />
-    <Compile Include="PawnOrganizer\Data\GameComponent_PawnColors.cs" />
-    <Compile Include="PawnOrganizer\Data\PawnOrganizerData.cs" />
-    <Compile Include="PawnOrganizer\Layout\WorkTabLayoutColumn.cs" />
-    <Compile Include="PawnOrganizer\Layout\WorkTabLayoutController.cs" />
-    <Compile Include="PawnOrganizer\Layout\WorkTabLayoutRow.cs" />
-    <Compile Include="PawnOrganizer\Patches\Patch_PawnColumnWorker_Label_DoCell.cs" />
-    <Compile Include="PawnOrganizer\PawnOrganizerSystem.cs" />
-    <Compile Include="Mod Support\IModSupportModule.cs" />
-    <Compile Include="Mod Support\ModSupportManager.cs" />
-    <Compile Include="Mod Support\ModSupportModuleBase.cs" />
-    <Compile Include="Mod Support\Mods\Useful Marks\UsefulMarksSupport.cs" />
-    <Compile Include="Mod Support\Mods\VSE\VSESupport.cs" />
-    <Compile Include="Mod Support\Multiplayer\LocalProfiles\BWTLocalProfile.cs" />
-    <Compile Include="Mod Support\Multiplayer\LocalProfiles\BWTLocalProfileStore.cs" />
-    <Compile Include="Mod Support\Multiplayer\MPCompat_BetterWorkTab.cs" />
-    <Compile Include="Mod Support\Multiplayer\MultiplayerBridge.cs" />
-    <Compile Include="Mod Support\Multiplayer\Sync\WorkColumnOrderSync.cs" />
-    <Compile Include="Mod Support\Multiplayer\Features\Layouts\LayoutSnapshot.cs" />
-    <Compile Include="Mod Support\Multiplayer\Features\Layouts\LayoutSharingManager.cs" />
-    <Compile Include="PawnOrganizer\RowDescriptor.cs" />
-    <Compile Include="PawnOrganizer\RowOrderUtility.cs" />
-    <Compile Include="Spine\DragDrop\DragDropController.cs" />
-    <Compile Include="Spine\DragDrop\DragDropManager.cs" />
-    <Compile Include="Spine\DragDrop\DragEndReason.cs" />
-    <Compile Include="Spine\DragDrop\Util\HeightCache.cs" />
-    <Compile Include="Spine\DragDrop\Util\ClickOrDragGate.cs" />
-    <Compile Include="Spine\DragDrop\Util\ListDragCalculator.cs" />
-    <Compile Include="Spine\DragDrop\Util\ListDragHelpers.cs" />
-    <Compile Include="Spine\DragDrop\ListDragSession.cs" />
-    <Compile Include="Spine\DragDrop\Util\ListDragVisuals.cs" />
-    <Compile Include="Spine\Profiling\SpineTiming.cs" />
-    <Compile Include="Spine\UI\TextColorHelper.cs" />
-    <Compile Include="Spine\UI\SettingsFramework\SettingDefinition.cs" />
-    <Compile Include="Spine\UI\SettingsFramework\SettingType.cs" />
-    <Compile Include="Spine\UI\SettingsFramework\SettingsHierarchy.cs" />
-    <Compile Include="Spine\UI\SettingsFramework\SettingWidgets.cs" />
-    <Compile Include="Spine\UI\SettingsFramework\SettingsListDrawer.cs" />
-    <Compile Include="Spine\UI\SettingsFramework\SettingsUIHelpers.cs" />
-    <Compile Include="Spine\UI\WidgetExtensions\RimworldSettingsWidgets.cs" />
-    <Compile Include="UI\RulesetListDragUI.cs" />
-    <Compile Include="UI\MainTabWindow_BetterWork.cs" />
-    <Compile Include="Features\WorkColumnOrderManager.cs" />
-    <Compile Include="BetterWorkTabSettings.cs" />
-    <Compile Include="Spine\UI\ColorPicker\Dialog_ColourPicker.cs" />
-    <Compile Include="Spine\UI\ColorPicker\RecentColours.cs" />
-    <Compile Include="Spine\UI\ColorPicker\TextField.cs" />
-    <Compile Include="Spine\UI\Widgets\SpineWidgets.cs" />
-    <Compile Include="UI\Dialog_EditDivider.cs" />
-    <Compile Include="UI\BetterWorkTabSettingsUI.cs" />
-    <Compile Include="UI\Settings\BWTSettingsRegistry.cs" />
-    <Compile Include="UI\Settings\BWTSettingsTranslation.cs" />
-    <Compile Include="UI\Settings\SettingIDs.cs" />
-    <Compile Include="UI\Window_RulesManager.cs" />
-    <Compile Include="UI\Dialog_RenameGeneric.cs" />
-    <Compile Include="UI\Dialog_RenameWorkload.cs" />
-    <Compile Include="UI\Dialog_RenameRuleset.cs" />
-    <Compile Include="UI\Headers\Angled\AngledLabelDrawer.cs" />
-    <Compile Include="UI\Headers\Angled\AngledHeaderInteraction.cs" />
-    <Compile Include="UI\Headers\WorkPriorityHeaderPatches.cs" />
-    <Compile Include="UI\Headers\Angled\AngledHeaderCache.cs" />
-    <Compile Include="UI\Headers\Angled\GUIClipUtility.cs" />
-    <Compile Include="UI\Headers\IHeaderRenderer.cs" />
-    <Compile Include="UI\Headers\HeaderPositioningManager.cs" />
-    <Compile Include="UI\Headers\HeaderDrawingCoordinator.cs" />
-    <Compile Include="UI\Headers\Vanilla\VanillaHeaderRenderer.cs" />
-    <Compile Include="UI\Headers\Vanilla\VanillaHeaderLayoutSolver.cs" />
-    <Compile Include="UI\Headers\Angled\AngledHeaderRenderer.cs" />
-    <Compile Include="UI\Headers\Vanilla\VanillaHeaderController.cs" />
-    <Compile Include="UI\Headers\Angled\AngledHeaderController.cs" />
-    <Compile Include="UI\Headers\HeaderInputController.cs" />
-    <Compile Include="UI\Headers\HeaderUtility.cs" />
-    <Compile Include="UI\HeaderButtons.cs" />
-    <Compile Include="UI\Dialog_WarningWithCheckbox.cs" />
-    <Compile Include="UI\MouseStateManager.cs" />
-    <Compile Include="Features\Patches\Patch_Building_Bed_Cache.cs" />
-    <Compile Include="UI\RuleBuilder\RuleBuilderConstants.cs" />
-    <Compile Include="UI\RuleBuilder\Window_RulesetBuilder.cs" />
-    <Compile Include="UI\RuleBuilder\State\RuleBuilderStep.cs" />
-    <Compile Include="UI\RuleBuilder\State\RuleMatchResult.cs" />
-    <Compile Include="UI\RuleBuilder\State\RuleBuilderState.cs" />
-    <Compile Include="UI\RuleBuilder\State\ConditionInfo.cs" />
-    <Compile Include="UI\RuleBuilder\Services\RuleMatchCalculator.cs" />
-    <Compile Include="UI\RuleBuilder\Services\RuleDragController.cs" />
-    <Compile Include="UI\RuleBuilder\Services\ConditionNameGenerator.cs" />
-    <Compile Include="UI\RuleBuilder\Services\ConditionRegistry.cs" />
-    <Compile Include="UI\RuleBuilder\Panels\IRuleBuilderPanel.cs" />
-    <Compile Include="UI\RuleBuilder\Panels\WorkTypeListPanel.cs" />
-    <Compile Include="UI\RuleBuilder\Panels\PrioritySelectorPanel.cs" />
-    <Compile Include="UI\RuleBuilder\Panels\ConditionEditorPanel.cs" />
-    <Compile Include="UI\RuleBuilder\Panels\RuleEditorPanel.cs" />
-    <Compile Include="UI\RuleBuilder\Panels\WorkTypeSelectorPanel.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\ConditionSetCard.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\ConditionPickerMenu.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\ConditionValueEditor.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\ConditionBuilderWidget.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\RuleRowWidget.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\ConditionDragController.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\PriorityChainWidget.cs" />
-    <Compile Include="UI\RuleBuilder\Widgets\WorkTypeCard.cs" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
       <Version>2.3.0</Version>
